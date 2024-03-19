@@ -173,3 +173,89 @@ And you should see something like this:
 ![](Images/madebranch.png)
 
 ### Edit the README
+
+If you have had Rstudio open, I would recommend closing it just so it knows you are opening a file in a new branch. Open the README.md file in Rstudio. You should see something like this:
+
+![](Images/readmeopen.png)
+
+Under the title, add a secondary header with your name (ex. `## Phillip`) and under that type your learning goals for this project (1 word minimum).
+
+![](Images/whalesounds.png)
+
+Now, make sure to save your README.md `CTRL + S` and then go back to your terminal.
+
+### Stage your changes! 🏁🏎️💨
+
+When we choose what changed files to send to Github, this is called `staging`. With the terminal open in the file path of your local Github repo, type:
+
+```         
+git status
+```
+
+You should see something akin to this:
+
+![](Images/staging.png)
+
+First, notice that it says `On branch phillip` instead of `On branch main` this is because I am now working in my local branch and will be pushing any edits to this branch. Anything in red is unstaged, to stage our README.md for pushing we need to type:
+
+```         
+git add README.md
+```
+
+If you type `git status` again in your terminal, you should see README.md now in green.
+
+![](Images/confirmedstage.png)
+
+### Commit your changes! 🕺💃
+
+Now that our changes to the README.md are staged, we want to commit them with a message that will appear in Github. Note that this message will be online for eternity so its important to avoid profanity, slang, or social security numbers. Further your message should be short and concise to what the changes you are committing are doing. For example, my commit may look like:
+
+```         
+git commit -m "Added learning goals to README"
+```
+
+The `-m` flag tells Github you want to add a message and anything the proceeding quotes are the message.
+
+![](Images/comitting.png)
+
+### Push your changes! 🧱👊
+
+Now we will finish off the process by pushing! This is the command that actually uploads our changes and commit message to Github. Type this in your terminal:
+
+```         
+git push
+```
+
+But wait!!!! We received an error message. Gasp! Have I betrayed you? Was this entire assignment an elaborate ploy to make a fool out of you that I have been preparing for years in order to slowly usurp the power structure at Olin and become a hereditary ruler? Unfortunately, no. Our push failed because we are pushing a branch we created locally but Github does not know of yet! Thankfully, Git is smart and tells us exactly what to do, simply copy the command Git gives you in the terminal and try to push again.
+
+```         
+git push --set-upstream origin yourbranchname
+```
+
+You should see something like this:
+
+![](Images/push.png)
+
+But we aren't done yet!
+
+### Time to approve those changes 💅
+
+Again, Git is really handy. It knows that since we just pushed a change to a branch, we may want to integrate those changes into our main branch. For that it gave us a link to go to a pull request, open that link in your browser.
+
+**NOTE: avoid approving pull requests at the exact same time as your teammate (this can overwhelm or confuse Github), coordinate with your team to do a pull request one at a time**
+
+When you open the link you should see a screen like this:
+
+![](Images/pullrequest.png)
+
+Draw your attention to the top left, you want to make sure that it says something along the lines of `base: main <- compare: yourbranchname`. This means we are merging our branches changes into main. If it says this, go ahead and click that `Create pull request` button.
+
+Since the changes we are making are relatively minor, and as long as your not making a pull request simultaneously, go ahead and approve the pull request.
+
+![](Images/mergepullrequest.png)
+
+If your merge was successful, go to the homepage of your branch and you should see your goals in the README.
+
+![](Images/successmerge.png)
+
+Congrats, you are a Github pro 💅
