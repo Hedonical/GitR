@@ -116,6 +116,60 @@ Lastly, it is advisable to choose a license. This tells others under what terms 
 
 Now you are good to create your repository!
 
+### Make everyone in your team a collaborator
+
+Before everyone can clone and edit the repository to their computer, they need the proper permissions. The person who created the repository should go to the repo home page and click ⚙️`settings`. From there, click collaborators on the left menu and then add everyone in your team.
+
+![](Images/collaborators.png)
+
 ## 🌿 [For Everyone] time to branch!
 
 Now that everyone has setup Github on their computer and that a repository has been created for your project, each team member will make a local `clone` of the repository and then create a branch 🌿. You will each edit the README 📝 to add what your learning goal is for the project and then `commit` and then `push` your changes before ultimately merging 💥 them into the main branch.
+
+### Go to the homepage of your repository
+
+To start, your only file will probably be your README markdown file.
+
+![](Images/yourrepohome.png)
+
+### Click on the bright green `<> Code` button
+
+Select either the link under `HTTPS` or `SSH` and copy it to your clipboard.
+
+![](Images/codeopt.png){width="500"}
+
+### Time to clone 🐑
+
+Open your `terminal` and go to a directory where you want to clone your repository. Type in the following command:
+
+```         
+git clone LINK
+```
+
+with LINK replaced with the link you copied.
+
+![](Images/gitclone.png)
+
+You now have a copy of the `main` branch in your folder.
+
+### Make a branch 🌿
+
+A branch is a copy of your main Github repo, commonly made when you have multiple people working on a project or want to isolate some code. Although working purely on the main branch is very common, this is not recommended for many reasons. First and foremost is that it can lead to major merging errors when everyone tries to push their changes to the same place, especially if the main branch has changed since you have last pulled. Therefore, we will make a branch to avoid this!
+
+In your terminal, to make a branch, go to your local copy of the Github repository and type this command (replace phillip with your preferred name)
+
+```         
+git checkout -b phillip
+```
+
+You can name a branch whatever you wish, but in this case, names are really useful for keeping track of whose branch is which. To confirm the new branch was made, type:
+
+```         
+git branch
+```
+
+And you should see something like this:
+
+![](Images/madebranch.png)
+
+### Edit the README
